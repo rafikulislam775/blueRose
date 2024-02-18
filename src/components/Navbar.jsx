@@ -51,7 +51,7 @@ const Navbar = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <div className={`drawer drawer-end ${isOpen ? "open" : ""}`}>
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
@@ -61,7 +61,7 @@ const Navbar = () => {
               header
                 ? "bg-blue-950 text-white shadow-lg py-3"
                 : "bg-transparent shadow-none py-5"
-            } fixed w-full max-w-full mx-auto z-auto transition-all duration-300  navbar `}
+            } fixed w-full max-w-full mx-auto  transition-all duration-300  navbar  z-10`}
           >
             <div className="flex-none lg:hidden">
               {/* Hamburger Icon */}
@@ -93,7 +93,7 @@ const Navbar = () => {
               </label>
             </div>
             <div className="flex-1 px-2 mx-2">Navbar Title</div>
-            <div className="flex-none hidden lg:block">
+            <div className="flex-none hidden lg:block z-10">
               <ul className="menu menu-horizontal">
                 {/* Navbar menu content here */}
                 {navItems.map((item, index) => (
@@ -113,7 +113,7 @@ const Navbar = () => {
           {/* Page content here */}
           {/* Content */}
         </div>
-        <div className="drawer-side ">
+        <div className="drawer-side z-20  ">
           <label
             htmlFor="my-drawer-3"
             aria-label="close sidebar"
