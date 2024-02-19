@@ -1,24 +1,36 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-scroll";
-
-const navItems = [
-  {
-    route: "会社概要",
-    pathname: "/about",
-  },
-  {
-    route: "事業内容",
-    pathname: "/service",
-  },
-  {
-    route: "採用情報",
-    pathname: "/recruit",
-  },
-  {
-    route: "お問い合わせ",
-    pathname: "/contact",
-  },
+import { NavLink } from "react-router-dom";
+import logo from "../assets/Logo_Header.png";
+const menuItems = [
+  { path: "/about", label: "会社概要" },
+  { path: "/service", label: "事業内容" },
+  { path: "/recruit", label: "採用情報" },
+  { path: "/contact", label: "お問い合わせ" },
 ];
+
+const MenuItems = () => {
+  useEffect(() => {
+    document.querySelectorAll(".nav-link").forEach((navLink) => {
+      const text = navLink.textContent.trim().split("");
+      navLink.innerHTML =
+        "<div>" +
+        text.map((letter) => `<span>${letter}</span>`).join("") +
+        "</div>";
+    });
+  }, []);
+
+  return menuItems.map((item, index) => (
+    <li key={index}>
+      <NavLink
+        to={item.path}
+        activeClassName="bg-red-500 text-white"
+        className="nav-link inline-block bg-red-500   hover:bg-red-300 p-4 mx-2 transition duration-300 ease-in-out "
+      >
+        {item.label}
+      </NavLink>
+    </li>
+  ));
+};
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,16 +51,6 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const scrollToSection = (id) => {
-    const section = document.querySelector(id);
-    if (section) {
-      window.scrollTo({
-        top: section.offsetTop,
-        behavior: "smooth",
-      });
-    }
-  };
 
   return (
     <div className="">
@@ -96,17 +98,7 @@ const Navbar = () => {
             <div className="flex-none hidden lg:block z-10">
               <ul className="menu menu-horizontal">
                 {/* Navbar menu content here */}
-                {navItems.map((item, index) => (
-                  <li key={index} className="mr-4">
-                    <Link
-                      className="cursor-pointer border px-3 rounded-xl hover:bg-red-50 hover:text-black"
-                      onClick={() => scrollToSection(item.pathname)}
-                      to={item.pathname}
-                    >
-                      {item.route}
-                    </Link>
-                  </li>
-                ))}
+                <MenuItems />
               </ul>
             </div>
           </div>
@@ -121,12 +113,7 @@ const Navbar = () => {
             onClick={toggleMenu}
           />
           <ul className="menu p-4 w-80 min-h-full bg-white text-black">
-            {/* Sidebar content here */}
-            {navItems.map((item, index) => (
-              <li key={index} className="mb-4">
-                <Link href={item.pathname}>{item.route}</Link>
-              </li>
-            ))}
+            <MenuItems />
           </ul>
         </div>
       </div>

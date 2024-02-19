@@ -3,7 +3,7 @@ import Title from "../share/Title";
 import aboutImg from "../assets/About_MVV.jpg";
 const About = () => {
   return (
-    <div className="" id="about">
+    <section className="" id="about">
       <Title>会社概要</Title>
       <div>
         <p className="text-center p-8 text-xl md:text-3xl font-bold">
@@ -61,7 +61,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
