@@ -61,6 +61,40 @@ const About = () => {
           </div>
         </div>
       </div>
+      <div className="w-3/4 mx-auto">
+        <section className="dark:bg-gray-800 dark:text-gray-100">
+          <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
+            <h2 className="mb-12 text-4xl font-bold   sm:text-5xl">
+              <SortTitle>会社概要</SortTitle>
+            </h2>
+            <div className="divide-y dark:divide-gray-700">
+              <div className="py-6 space-y-2 md:grid md:grid-cols-12 md:gap-8 md:space-y-0">
+                <h3 className="font-semibold md:col-span-5">会社名</h3>
+                <p className="md:pl-0 md:col-span-7">株式会社 BlueRose</p>
+              </div>
+              <div className="py-6 space-y-2 md:grid md:grid-cols-12 md:gap-8 md:space-y-0">
+                <h3 className="font-semibold md:col-span-5">代表者名</h3>
+                <p className="md:pl-0 md:col-span-7">井口 由美子</p>
+              </div>
+              <div className="py-6 space-y-2 md:grid md:grid-cols-12 md:gap-8 md:space-y-0">
+                <h3 className="font-semibold md:col-span-5">設立日</h3>
+                <p className="md:pl-0 md:col-span-7">2023年10月</p>
+              </div>
+              <div className="py-6 space-y-2 md:grid md:grid-cols-12 md:gap-8 md:space-y-0">
+                <h3 className="font-semibold md:col-span-5">資本金</h3>
+                <p className="md:pl-0 md:col-span-7">500万円</p>
+              </div>
+              <div className="py-6 space-y-2 md:grid md:grid-cols-12 md:gap-8 md:space-y-0">
+                <h3 className="font-semibold md:col-span-5">本社住所</h3>
+                <p className="md:pl-0 md:col-span-7">
+                  福岡県福岡市博多区博多駅東1−12−17 <br />
+                  オフィスニューガイヤ博多駅前3F
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </section>
   );
 };
