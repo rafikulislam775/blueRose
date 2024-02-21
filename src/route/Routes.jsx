@@ -4,6 +4,7 @@ import Home from "../Home";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Recruit from "../components/Recruit";
+import Service from "../components/Service";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "recruit",
         element: <Recruit></Recruit>,
+      },
+      {
+        path: "service",
+        element: <Service></Service>,
       },
     ],
   },

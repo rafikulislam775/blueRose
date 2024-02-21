@@ -8,8 +8,8 @@ const Title = ({ children }) => {
       <h1 className="absolute text-xl sm:text-3xl md:text-4xl lg:text-6xl bottom-[40%] lg:bottom-[30%] left-40 md:left-60 right-0 transform -translate-y-full opacity-20 font-extrabold">
         {children === "会社概要"
           ? "About"
-          : children === "Abou"
-          ? "サービス"
+          : children === "事業内容"
+          ? "Service"
           : children === "Contact Us"
           ? "お問い合わせ"
           : children}
